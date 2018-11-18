@@ -12,7 +12,6 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Log.d("onMarkerClick : Uri ", marker.getTag().toString());
+//        Log.d("onMarkerClick : Uri ", marker.getTag().toString());
         if (isEditMode) {
             Uri uri = Uri.parse(marker.getTag().toString());
             int deletedID = getContentResolver().delete(uri, null, null);

@@ -69,7 +69,7 @@ public class FavoritesActivity extends AppCompatActivity implements
 
             case ID_FAVORITES_LOADER:
                 Uri favoritesUri = GeoPicContract.FavoritePhotosEntry.CONTENT_URI;
-                String sortOrder = GeoPicContract.FavoritePhotosEntry.COLUMN_CREATED_AT + " DESC";
+                String sortOrder = GeoPicContract.FavoritePhotosEntry.COLUMN_CREATED_AT + getString(R.string.sort_order);
 
                 return new CursorLoader(this,
                         favoritesUri,

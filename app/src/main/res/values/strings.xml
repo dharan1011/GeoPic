@@ -35,5 +35,6 @@
     <string name="share_title">Share Image</string>
     <string name="image_save_success">image on the disk deleted successfully!</string>
     <string name="image_save_failure">image on the disk deleted unsuccessful</string>
+    <string name="sort_order">DESC</string>
 
 </resources>

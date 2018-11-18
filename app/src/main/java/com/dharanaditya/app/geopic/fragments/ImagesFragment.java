@@ -48,6 +48,7 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
     private static final String STATE_PAGE_NUMBER = "page_number";
     private static final String STATE_JSON_RESPONSE = "json_response";
     private static final String STATE_RCV = "rcv_state";
+    private static final String STATE_LAT_LONG = "lat_long";
 
     @BindView(R.id.map_view)
     MapView mapView;
@@ -57,9 +58,9 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
     ProgressBar loadingIndicatorProgressBar;
 
     private List<FlickrPhoto> photosList;
+    private PhotosAdapter photosAdapter;
     private LatLng latLng;
     private int pageNumber;
-    private PhotosAdapter photosAdapter;
     private String jsonResponse;
 
     @Override
@@ -85,7 +86,7 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
             jsonResponse = savedInstanceState.getString(STATE_JSON_RESPONSE);
             parseAndLoadResponse();
             recyclerViewImages.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable(STATE_RCV));
-
+            latLng = savedInstanceState.getParcelable(STATE_LAT_LONG);
         }
 
         return rootView;
@@ -120,6 +121,7 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
         mapView.onSaveInstanceState(outState);
         outState.putInt(STATE_PAGE_NUMBER, pageNumber);
         outState.putString(STATE_JSON_RESPONSE, jsonResponse);
+        outState.putParcelable(STATE_LAT_LONG, latLng);
         outState.putParcelable(STATE_RCV, recyclerViewImages.getLayoutManager().onSaveInstanceState());
     }
 
