@@ -1,7 +1,6 @@
 package com.dharanaditya.app.geopic.utils;
 
 import android.net.Uri;
-import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -35,7 +34,7 @@ public class NetworkUtility {
                 .appendQueryParameter(FlickrConstants.BOUNDING_BOX, FlickrConstants.bboxString(latLng))
                 .build();
 
-        URL url = null;
+        URL url;
         try {
             url = new URL(uri.toString());
         } catch (Exception e) {
@@ -50,8 +49,6 @@ public class NetworkUtility {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
             InputStream in = urlConnection.getInputStream();
-            Log.v("input stream", in.toString());
-
             Scanner scanner = new Scanner(in);
             scanner.useDelimiter("\\A");
 

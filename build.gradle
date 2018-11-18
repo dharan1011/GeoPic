@@ -28,3 +28,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    supportLibrary = '28.0.0'
+    playServices = '16.0.0'
+    constraintLayout = '1.1.3'
+    firebase = playServices
+}

@@ -59,7 +59,7 @@ public class PreviewActivity extends AppCompatActivity {
         myShareIntent = new Intent(Intent.ACTION_SEND);
         myShareIntent.setType("image/*");
         myShareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(flickrPhotoUrl));
-        startActivity(Intent.createChooser(myShareIntent, "Share Image"));
+        startActivity(Intent.createChooser(myShareIntent, getString(R.string.share_title)));
     }
 
 }

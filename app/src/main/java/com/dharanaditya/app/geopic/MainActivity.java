@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     marker.setTag(insertedUri);
                     Toast.makeText(MainActivity.this, getString(R.string.marker_added), Toast.LENGTH_SHORT).show();
                 } else {
-                    Log.e(TAG, "onMapLongClick: Unable to insert pin into database.");
+//                    Log.e(TAG, "onMapLongClick: Unable to insert pin into database.");
                 }
             }
         });

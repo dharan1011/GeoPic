@@ -6,7 +6,7 @@
 
 
     <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+        android:id="@+id/map_view"
         android:layout_width="200dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,15 +14,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_photos"
+        android:id="@+id/rcv_images"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/mapView"
+        app:layout_constraintStart_toEndOf="@id/map_view"
         app:layout_constraintTop_toTopOf="parent">
-
     </android.support.v7.widget.RecyclerView>
+
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/rcv_images"
+        app:layout_constraintStart_toStartOf="@id/rcv_images"
+        app:layout_constraintTop_toBottomOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

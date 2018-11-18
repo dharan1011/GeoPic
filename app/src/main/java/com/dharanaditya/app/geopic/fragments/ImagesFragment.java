@@ -47,6 +47,7 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
 
     private static final String STATE_PAGE_NUMBER = "page_number";
     private static final String STATE_JSON_RESPONSE = "json_response";
+    private static final String STATE_RCV = "rcv_state";
 
     @BindView(R.id.map_view)
     MapView mapView;
@@ -60,12 +61,6 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
     private int pageNumber;
     private PhotosAdapter photosAdapter;
     private String jsonResponse;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -85,9 +80,12 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
             pageNumber = 1;
             getPhotos();
         } else {
+            // Restore Fragment State
             pageNumber = savedInstanceState.getInt(STATE_PAGE_NUMBER, 1);
             jsonResponse = savedInstanceState.getString(STATE_JSON_RESPONSE);
             parseAndLoadResponse();
+            recyclerViewImages.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable(STATE_RCV));
+
         }
 
         return rootView;
@@ -115,11 +113,14 @@ public class ImagesFragment extends Fragment implements OnMapReadyCallback, Imag
         mMap.getUiSettings().setScrollGesturesEnabled(false);
     }
 
+    // Persisting the page and json response from api call
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+        mapView.onSaveInstanceState(outState);
         outState.putInt(STATE_PAGE_NUMBER, pageNumber);
         outState.putString(STATE_JSON_RESPONSE, jsonResponse);
+        outState.putParcelable(STATE_RCV, recyclerViewImages.getLayoutManager().onSaveInstanceState());
     }
 
     public void setLatLng(LatLng latLng) {

@@ -40,7 +40,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
         @Override
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
             multiItemSelect = true;
-            menu.add("Delete");
+            menu.add(mContext.getString(R.string.cm_delete));
             return true;
         }
 

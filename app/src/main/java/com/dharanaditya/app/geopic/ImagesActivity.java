@@ -28,6 +28,7 @@ public class ImagesActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         imagesFragment = (ImagesFragment) fragmentManager.findFragmentByTag(ImagesFragment.class.getSimpleName());
+
         if (imagesFragment == null) {
             imagesFragment = new ImagesFragment();
             fragmentManager.beginTransaction()

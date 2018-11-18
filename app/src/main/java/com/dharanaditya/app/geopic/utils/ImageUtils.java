@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import com.dharanaditya.app.geopic.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -40,7 +41,7 @@ public class ImageUtils {
                                 e.printStackTrace();
                             }
                         }
-                        Log.i("image", "image saved to >>>" + imageFile.getAbsolutePath());
+//                        Log.i("image", "image saved to >>>" + imageFile.getAbsolutePath());
                     }
                 }).start();
             }
@@ -71,9 +72,9 @@ public class ImageUtils {
         File directory = contextWrapper.getDir(imageDirectory, Context.MODE_PRIVATE);
         File imageFilePath = new File(directory, imageFile);
         if (imageFilePath.delete()) {
-            Log.v(TAG, "image on the disk deleted successfully!");
+            Log.v(TAG, contextWrapper.getString(R.string.image_save_success));
         } else {
-            Log.v(TAG, "image on the disk deleted unsuccessful");
+            Log.v(TAG, contextWrapper.getString(R.string.image_save_failure));
         }
     }
 

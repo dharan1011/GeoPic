@@ -1,4 +1,4 @@
-# Obtaine API Keys
+# Obtain API Keys
 - Flicker Api Key from [here](https://www.flickr.com/services/api/misc.api_keys.html)
 - Google Maps Api Key from [here](https://developers.google.com/maps/documentation/android-sdk/signup)
 # Add Keys in respective files

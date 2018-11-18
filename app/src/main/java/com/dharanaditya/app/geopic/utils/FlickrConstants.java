@@ -16,8 +16,7 @@ class FlickrConstants {
     static final String PAGE = "page";
     // Flickr Photos Parameter Values
     static final String PARAMS_SEARCH_METHOD = "flickr.photos.search";
-    // TODO: 18/11/18 Replace with Flickr API Key
-    static final String PARAMS_API_KEY = "FLICKR-API-KEY";
+    static final String PARAMS_API_KEY = "915e14727f6ccaabe6546625859c25ea";
     static final String PARAMS_RESPONSE_FORMAT = "json";
     static final String PARAMS_DISABLE_JSON_CALLBACK = "1";
     static final String PARAMS_MEDIUM_URL = "url_m";
