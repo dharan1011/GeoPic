@@ -1,0 +1,4 @@
+<resources>
+    <!--TODO: Add Google Maps API key here. -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">API_KEY_HERE-iiXggId9qM</string>
+</resources>

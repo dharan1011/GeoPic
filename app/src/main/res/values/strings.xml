@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GeoPic</string>
+
+    <string name="content_authority">com.dharanaditya.app.geopic</string>
+    <!--Google AdMod-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544~3347511713</string>
+
+    <!-- Favorites Menu -->
+    <string name="edit">Edit</string>
+    <string name="done">Done</string>
+    <string name="favorites">Favorites</string>
+
+    <!-- Photos Menu -->
+    <string name="refresh">Refresh</string>
+    <!--Cached Image Directory Path-->
+    <string name="image_directory">app_cache</string>
+    <!--Widget Res-->
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <!-- Widget -->
+    <string name="empty_view_text">Select your favorite photos by dropping pins on the map.</string>
+
+    <!-- Content Description -->
+    <string name="no_content_description">No description available for this image.</string>
+    <string name="share">Share</string>
+    <string name="favorite">Favorite</string>
+    <string name="marker_removed">Pin Removed</string>
+    <string name="marker_added">Pin Dropped</string>
+    <string name="images_removed">Image removed from favourite</string>
+    <string name="fav_add">Added to favourite</string>
+    <string name="fav_remove">Removed from favourite</string>
+    <string name="no_internet">No Internet Connectivity</string>
+
+</resources>
